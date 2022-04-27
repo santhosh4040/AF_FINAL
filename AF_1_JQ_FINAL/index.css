@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: 0;
+}
+
+body {
+  font-family: 'Questrial', sans-serif;
+}
+
+/* NAVBAR */
+.navitem {
+  width: 100%;
+  border: 1px solid rgb(242, 242, 242);
+  border-top: none;
+  margin: 0px;
+}
+
+.heading {
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-left: 5px;
+}
+
+.center-column {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 3% 50%, 0% 0%);
+  padding: 0px;
+  margin: 0px;
+  color: white;
+  background-color: rgb(241, 177, 54);
+}
+
+.greeting {
+  margin-left: 50px;
+  margin-top: 10px;
+  font-weight: bold;
+  background-color: rgb(241, 177, 54);
+}
+
+.end-column {
+  margin: 0px 0px;
+  background-color: rgb(241, 177, 54);
+}
+
+/* CONTENT SIDEBAR */
+.sidebar {
+  padding: 0px;
+  border: 1px solid rgb(242, 242, 242);
+  border-top: none;
+}
+
+.search {
+  margin: 15px;
+}
+
+.input-search {
+  border-radius: 20px !important;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25) inset;
+}
+
+.ulist {
+  list-style-type: none;
+}
+
+.listItem {
+  display: block;
+  width: 100%;
+  border: 2px solid rgb(242, 242, 242);
+  background-color: white;
+  font-weight: bold;
+}
+.active {
+  background-color: rgb(238, 238, 238);
+
+}
+.active i {
+  background-color: rgb(127, 127, 127);
+  padding: 5px;
+  color: white;
+  border-radius: 100%;
+  margin-bottom: 20px;
+}
+
+.forward {
+  background-color: rgb(186, 186, 186);
+  padding: 5px;
+  color: white;
+  border-radius: 100%;
+  margin-bottom: 20px;
+}
+
+.addIcon {
+  background-color: rgb(241, 177, 54);
+  padding: 10px;
+  border-radius: 50%;
+  color: white;
+  position: fixed;
+  bottom: 20px;
+  left: 21%;
+  cursor: pointer;
+}
+.addIcon:active{
+  transform: scale(0.98);
+}
+
+
+/* MAIN CONTENT */
+.content {
+  padding: 10px;
+  border: 1px solid rgb(242, 242, 242);
+  border-top: none;
+  border-left: none;
+}
+
+.item1 {
+  border-right: 1px solid rgb(218, 214, 215);
+  text-align: center;
+}
+
+.item2 {
+  border-right: 1px solid rgb(218, 214, 215);
+  text-align: center;
+}
+
+.item3 {
+  text-align: center;
+}
+
+.contentadd {
+  background-color: rgb(192, 192, 192);
+  border: none;
+  padding: 20px;
+  border-radius: 0px 0px 25px 25px;
+  margin-top: -19px;
+}
+.contentadd:active{
+  transform: scale(0.98);
+}
+
+.cardLeft {
+  padding: 20px;
+  border-left: none;
+  border-top: none;
+}
+
+.cardLeft h3 {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.cardLeft h4 {
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(178, 178, 178);
+}
+
+.cardRight {
+  padding: 5px;
+}
+
+.cardRight h3 {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.cardRight h4 {
+  font-size: 25px;
+  font-weight: bold;
+  direction: rtl;
+  color: rgb(178, 178, 178);
+}
+
+.cancel {
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  background-color: rgb(214, 74, 115);
+  border: none;
+  padding: 15px 25px 15px 25px;
+  border-radius: 0px 0px 25px 25px;
+  margin: -16px 10px 10px auto;
+  color: white;
+}
+.cancel:active{
+  transform: scale(0.98);
+}
+
+.proceed {
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  background-color: rgb(104, 196, 191);
+  margin: -16px 10px 10px auto;
+  color: white;
+  padding: 20px;
+  border: none;
+  border-radius: 0px 0px 25px 25px;
+}
+.proceed:active{
+  transform: scale(0.98);
+}
+
+.table {
+  background-color: rgb(247, 245, 245);
+  margin: 0;
+  border-left: none;
+  border-right: none;
+  border-radius: none;
+
+
+}
+
+.thead {
+  background-color: rgb(241, 177, 54);
+  border: none;
+  color: white;
+
+}
+
+.table h4 {
+  padding: 20px;
+  font-size: 19px;
+  font-weight: bold;
+}

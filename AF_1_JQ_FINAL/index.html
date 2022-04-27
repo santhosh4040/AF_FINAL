@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UI Training</title>
+
+  <!-- Bootstrap links -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+    integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+    integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+    crossorigin="anonymous"></script>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="index.css" />
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/647a10c56a.js" crossorigin="anonymous"></script>
+
+  <!-- JQuery CDN -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+  <!-- NAVBAR SECTION-->
+
+  <div class="row navitem">
+    <div class="col-2 headingColumn">
+      <h3 class="heading" style="color: #f1b136 !important;">Bill of Material</h3>
+    </div>
+    <div class="col-10 center-column">
+      <h3 class="greeting"><span>  <i class="fa-regular fa-sun" style="margin-left: 15px;"></i> </span> Good Morning, Mr.vaidy <span> <a href=""> <span><i class="fa-regular fa-bell fa-1x float-end noti-icon"
+        style="color: white; margin-right: 10px;"></i></span> </a></span></h3>
+    </div>
+    <div class="col-2 end-column">
+
+    </div>
+  </div>
+  </div>
+
+  <!-- END OF NAVBAR SECTION -->
+
+  <!-- MAIN SECTION -->
+
+  <div class="container-fluid">
+    <div class="row" style="height: 90vh !important;">
+
+      <!-- SIDEBAR SECTION -->
+
+      <div class="col-3 sidebar">
+
+        <!-- SEARCH INPUT -->
+        <div class="search">
+          <input class="form-control me-2 input-search" type="search" placeholder="Search Material" aria-label="Search" onkeyup="handleSearch(event)">
+        </div>
+
+        <!-- BUTTON LIST ITEMS -->
+        <div style="margin-top:10px;">
+          <ul class="ulist" style="padding:0px;" id="listButtons">
+            <button class="listItem active" style="padding:10px;" onclick="getMaterialData(this)" id="listMaterial"> 
+              <li>
+                <p> 
+                  PRB1 <span><i class="float-end mt-3 fa-solid fa-angle-right forward"></i> </span> <br> Red Sports
+                  Bike
+                </p>
+              </li>
+            </button>
+             
+            <!-- <button class="listItem" style="padding:10px;">
+              <li>
+                <p>
+                  PRB2 <span><i class="float-end mt-3 fa-solid fa-angle-right forward"></i> </span> <br> Blue Sports
+                  Bike
+                </p>
+              </li>
+            </button>
+            <button class="listItem" style="padding:10px;">
+              <li>
+                <p> PRB3 <span><i class="float-end mt-3 fa-solid fa-angle-right forward"></i> </span> <br> Micro Suction
+                  tape </p>
+              </li>
+            </button> -->
+          </ul>
+
+        </div>
+
+      <!-- ADD ICON -->
+        <span data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Add Material"> <i class="float-end fa-solid fa-plus addIcon"></i> </span>
+      </div>
+
+      <!-- END OF SIDEBAR -->
+
+      <!-- MAIN CONTENT -->
+
+      <!-- MODAL FOR SIDEBAR -->
+    <div class="modal fade formModal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">New Material</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form onsubmit="handleMaterialForm(event)">
+                <div class="mb-3">
+                  <label for="recipient-name" class="col-form-label">Material Name:</label>
+                  <input type="text" class="form-control" id="material-name">
+                </div>
+                <div class="mb-3">
+                  <label for="message-text" class="col-form-label">Description:</label>
+                  <textarea class="form-control" id="message-text"></textarea>
+                </div>
+              
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: rgb(241, 177, 54); border: none; font-weight: bold;">Close</button>
+              <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" style="background-color: rgb(241, 177, 54); border: none; font-weight: bold;" >Add material</button>
+            </div>
+          </form>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- MAIN CONTENT PART I -->
+      <div class="col-9 content">
+        <div class="row" style="margin-top: 50px;">
+          <div class="col-4 item1">
+            <div>
+              <h3 style="font-weight: bold;" id="matName">PRB1</h3>
+            </div>
+            <div>
+              <h5 style="font-weight: bold;" id="matDescription">RED SPORTS BIKE</h5>
+            </div>
+          </div>
+          <div class="col-4 item2">
+            <div>
+              <h3 style="font-weight: bold;" id="matId">1101 - PHOENIX</h3>
+            </div>
+            <div>
+              <h5 style="color: rgb(139, 139, 139);" id="matDate">JUL-01-2017 TO JUL-07-2017</h5>
+            </div>
+          </div>
+          <div class="col-4 item3">
+            <div>
+              <h3 style="font-weight: bold;" id="matStatus">PRODUCTION</h3>
+            </div>
+            <div>
+              <h5 style="color: rgb(139, 139, 139);" id="quantity">QUANTITY - 1EA UNUSED</h5>
+            </div>
+          </div>
+
+        </div>
+        <hr style="height: 3px;">
+        <div>
+          <button class="float-end contentadd" onclick="addMaterial()"><i class="fa-solid fa-plus fa-1x" style="color: white;"></i></button>
+        </div>
+        <!-- END OF MAIN CONTENT PART I -->
+        <!-- MAIN CONTENT PART II -->
+
+        <div style="margin-top: 80px;">
+          <div class="card">
+            <div id="top-card">
+            <div id="material-card" class="materialCardClass">
+            <div class="card mb-3"  style="border-radius: 0px; border-left: 5px solid rgb(241, 177, 54); border-right:10px solid rgb(182, 182, 182)">
+              <div class="row g-0">
+                <div class="col-md-6 cardLeft">
+                  <h3 id="cardMatName">CO1</h3>
+                  <h4 id="cardMatDescription">Wheel-Material</h4>
+                </div>
+                <div class="col-md-6 cardRight">
+                  <div class="float-end p-4 me-4">
+                    <h3 id="cardMatQuantity">2 EA</h3>
+                    <h4 id="cardMatQuantDescription">5M01</h4>
+                  </div>
+                </div>
+              </div>
+            
+            
+          </div>
+          <div style="float: right;">
+            <button class="proceed float-end"> <i class="float-end fa-solid fa-plus"></i> </button>
+            <button class="cancel float-end" id="removeMaterial" onclick="removeMaterial(this)"> <i class="fa-solid fa-xmark"></i> </button>
+          </div>
+          <div style="margin-bottom: 7%;"></div>
+        </div>
+        
+        </div>
+            
+
+            <!-- END OF MAIN CONTENT PART II -->
+            <!-- MAIN CONTENT TABLE -->
+            <div class="card table">
+              <h4>Material:E1BY302520-G (Green Tyre Ultrac Vorti R)</h4>
+              <table class="table" style="border-top: 1px solid rgb(241, 177, 54);">
+                <thead class="table thead">
+                  <tr>
+                    <th scope="col">Item No</th>
+                    <th scope="col">Item Code</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Unit of Measure</th>
+                  </tr>
+                </thead>
+                <tbody style="border-top: 1px solid rgb(241, 177, 54);">
+                  <tr>
+                    <th scope="row">0010</th>
+                    <td>E1ME04-88-0500</td>
+                    <td>L</td>
+                    <td>2</td>
+                    <td>EA</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">0020</th>
+                    <td>ELPA90ZH400-546</td>
+                    <td>L</td>
+                    <td>10.535</td>
+                    <td>M</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <!-- END OF MAIN CONTENT TABLE -->
+        <!-- FINAL MAIN CONTENT -->
+        <div class="card mt-3"
+          style="border-radius: 0px; border-left: 5px solid  rgb(182, 182, 182); border-right:10px solid rgb(182, 182, 182)">
+
+          <div class="row g-0">
+            <div class="col-md-6 cardLeft">
+              <h3>OBAS1</h3>
+              <h4>BikeQualityInspection-Operation</h4>
+            </div>
+            <div class="col-md-6 cardRight">
+              <div class="float-end p-4 me-4">
+                <h3>100 MIN</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- END OF MAIN FINAL CONTENT -->
+      </div>
+
+      <!-- END OF MAIN CONTENT -->
+    </div>
+  </div>
+
+
+  <script type="text/javascript" src="data.js"></script>
+  <script type="text/javascript" src="index.js"></script>
+
+</body>
+
+</html>
